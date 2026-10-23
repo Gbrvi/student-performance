@@ -1,0 +1,241 @@
+﻿Student_ID,Study_Hours_Week,Attendance_Pct,Sleep_Hours_Day,Previous_Score,Study_Method,Course,Final_Score
+S001,9.0,73.2,7.2,63.7,Individual,Networks,100.0
+S002,4.7,81.1,8.6,79.7,Individual,Statistics,89.8
+S003,10.4,64.4,7.1,35.4,Individual,Statistics,72.9
+S004,11.0,67.3,7.6,45.5,Individual,Networks,85.6
+S005,1.8,100.0,6.9,53.0,Video lessons,Programming,78.8
+S006,3.8,69.1,6.8,84.0,Individual,Statistics,71.4
+S007,8.4,71.0,6.1,68.7,Individual,Databases,84.9
+S008,7.0,100.0,7.5,75.0,Individual,Statistics,90.4
+S009,7.9,100.0,6.1,50.2,Individual,Networks,96.9
+S010,5.3,70.3,7.7,50.4,Individual,Statistics,77.7
+S011,10.8,78.3,8.2,70.8,Study group,Networks,94.9
+S012,10.5,85.4,7.4,65.8,Individual,Programming,95.4
+S013,8.2,99.3,6.7,72.1,Video lessons,Databases,98.5
+S014,11.6,72.1,7.5,62.6,Video lessons,Databases,98.7
+S015,9.5,79.5,6.7,68.6,Individual,Programming,84.4
+S016,5.3,89.8,8.0,67.1,Individual,Programming,80.0
+S017,9.2,86.3,5.0,75.1,Individual,Databases,100.0
+S018,4.9,78.2,6.6,75.5,Study group,Databases,81.4
+S019,10.8,80.7,4.8,43.9,Individual,Databases,74.8
+S020,7.8,68.3,5.4,35.8,Video lessons,Programming,78.4
+S021,7.4,79.6,8.5,78.0,Video lessons,Databases,96.9
+S022,5.8,79.3,8.0,80.4,Video lessons,Networks,77.7
+S023,11.9,84.3,6.2,51.7,Study group,Programming,95.2
+S024,7.5,76.4,5.3,40.8,Video lessons,Statistics,83.9
+S025,6.6,86.7,3.7,66.3,Individual,Statistics,87.4
+S026,6.9,92.1,6.4,77.1,Individual,Networks,98.1
+S027,9.7,83.6,9.7,88.4,Individual,Statistics,92.1
+S028,9.2,85.5,7.5,71.7,Video lessons,Statistics,98.1
+S029,9.3,82.5,6.4,60.2,Study group,Databases,87.8
+S030,9.4,82.0,7.5,53.4,Video lessons,Programming,85.9
+S031,14.9,74.8,5.3,65.1,Individual,Networks,100.0
+S032,6.7,85.2,6.7,61.1,Video lessons,Networks,98.3
+S033,6.4,81.0,7.1,51.8,Study group,Databases,96.8
+S034,5.4,,6.9,91.6,Study group,Databases,100.0
+S035,10.0,97.7,7.9,88.2,Video lessons,Databases,100.0
+S036,11.6,85.9,7.4,79.8,Individual,Networks,100.0
+S037,7.6,74.4,7.7,53.0,Individual,Networks,90.1
+S038,5.3,70.9,6.2,76.1,Study group,Statistics,83.9
+S039,5.4,93.9,8.0,73.3,Individual,Statistics,92.5
+S040,10.1,84.6,8.8,70.8,Individual,Databases,100.0
+S041,10.4,86.8,5.9,81.2,Individual,Programming,98.5
+S042,,64.6,6.0,73.3,Individual,Networks,83.0
+S043,5.9,91.3,8.5,74.6,Video lessons,Networks,89.4
+S044,8.7,86.5,6.8,73.3,Study group,Databases,99.4
+S045,8.4,70.9,8.5,69.4,Individual,Statistics,90.2
+S046,,77.3,6.5,41.8,Individual,Statistics,85.1
+S047,10.8,84.6,8.6,66.1,Individual,Statistics,100.0
+S048,8.7,82.5,7.1,57.8,Study group,Databases,86.2
+S049,10.2,79.1,7.3,48.4,Video lessons,Networks,94.9
+S050,8.2,81.0,8.7,86.9,Video lessons,Databases,100.0
+S051,8.9,79.5,6.6,87.5,Individual,Networks,86.5
+S052,10.0,83.5,6.0,82.7,Individual,Networks,
+S053,3.3,96.7,6.5,68.3,Study group,Databases,80.9
+S054,7.0,56.3,7.5,82.6,Study group,Statistics,72.2
+S055,,79.6,5.3,65.2,Study group,Databases,75.4
+S056,6.0,83.8,,67.6,Study group,Statistics,79.5
+S057,7.1,85.0,6.4,50.8,Study group,Databases,84.3
+S058,12.8,78.3,8.3,70.2,Individual,Networks,98.9
+S059,5.2,64.4,4.4,65.8,Individual,Statistics,72.9
+S060,11.1,85.3,6.1,48.1,Individual,Databases,95.8
+S061,2.6,99.3,5.1,64.3,Individual,Programming,84.1
+S062,6.9,66.7,6.1,64.0,Individual,Databases,83.9
+S063,8.5,90.6,7.3,88.4,Study group,Statistics,100.0
+S064,9.9,78.7,6.8,76.6,Individual,Statistics,100.0
+S065,10.3,81.4,6.7,65.1,Individual,Databases,76.8
+S066,10.5,71.5,6.8,68.2,Study group,Programming,89.1
+S067,6.9,78.7,,65.6,Video lessons,Databases,69.3
+S068,6.5,95.0,5.9,62.4,Individual,Databases,88.6
+S069,10.7,87.8,7.8,50.9,Video lessons,Statistics,93.7
+S070,7.4,99.3,7.7,63.0,Video lessons,Programming,100.0
+S071,3.9,93.8,7.4,55.3,Study group,Statistics,92.2
+S072,4.4,,7.6,48.7,Study group,Programming,81.5
+S073,5.1,99.4,7.3,71.6,Individual,Statistics,87.2
+S074,9.6,86.4,9.2,70.1,Video lessons,Databases,100.0
+S075,8.5,90.3,6.9,41.8,Individual,Programming,82.2
+S076,10.2,79.0,6.7,63.4,Video lessons,Databases,92.2
+S077,6.6,82.7,6.2,77.9,Study group,Programming,97.5
+S078,8.5,75.0,5.9,78.8,Individual,Networks,86.5
+S079,10.0,91.9,5.6,78.3,Individual,Databases,100.0
+S080,7.0,70.2,6.0,65.5,Study group,Statistics,88.3
+S081,9.5,89.8,6.9,54.0,Study group,Databases,84.0
+S082,5.9,80.1,7.4,50.9,Individual,Programming,89.1
+S083,6.8,93.7,,69.5,Study group,Programming,97.6
+S084,6.8,89.5,6.2,69.9,Video lessons,Networks,90.6
+S085,4.2,100.0,8.0,81.7,Study group,Networks,87.2
+S086,9.6,89.3,7.8,79.3,Study group,Programming,93.1
+S087,6.5,66.3,6.8,63.3,Individual,Statistics,76.8
+S088,8.0,81.3,6.3,48.8,Video lessons,Programming,88.3
+S089,9.5,70.3,7.6,60.9,Individual,Statistics,81.0
+S090,9.4,76.8,7.2,67.8,Video lessons,Statistics,95.3
+S091,10.1,97.1,5.4,62.4,Individual,Statistics,85.6
+S092,7.7,88.4,6.9,57.5,Study group,Databases,87.0
+S093,6.6,75.0,7.3,68.3,Individual,Programming,86.8
+S094,7.7,71.9,6.0,58.4,Individual,Networks,100.0
+S095,2.6,82.3,7.2,56.8,Video lessons,Databases,65.8
+S096,3.4,69.8,5.4,69.0,Study group,Networks,87.6
+S097,3.8,75.3,8.5,59.8,Study group,Programming,80.8
+S098,4.8,85.1,8.4,68.2,Video lessons,Databases,90.0
+S099,9.3,93.6,6.7,68.6,Video lessons,Networks,97.2
+S100,5.1,88.1,,50.2,Video lessons,Programming,85.5
+S101,6.8,59.1,4.3,58.7,Individual,Networks,73.9
+S102,12.2,85.0,5.7,,Study group,Statistics,100.0
+S103,6.9,82.7,6.7,49.9,Video lessons,Networks,79.3
+S104,10.4,86.1,5.8,,Individual,Statistics,95.4
+S105,5.0,98.2,7.8,40.8,Individual,Networks,77.5
+S106,7.3,61.4,9.2,65.4,Video lessons,Programming,84.3
+S107,5.0,76.1,5.7,65.4,Study group,Statistics,71.7
+S108,6.9,87.9,6.1,63.5,Study group,Statistics,91.2
+S109,10.7,66.2,7.3,80.8,Video lessons,Programming,100.0
+S110,2.5,96.8,8.8,30.3,Study group,Statistics,74.9
+S111,9.4,85.7,5.7,70.1,Individual,Statistics,91.7
+S112,8.8,90.5,7.3,85.3,Individual,Programming,90.8
+S113,6.1,76.3,9.0,50.3,Individual,Databases,80.6
+S114,3.4,90.1,5.2,60.1,Individual,Databases,66.4
+S115,8.2,92.7,5.6,55.2,Video lessons,Networks,81.4
+S116,6.3,84.3,6.5,53.4,Video lessons,Databases,84.8
+S117,8.7,84.3,6.4,60.8,Individual,Programming,100.0
+S118,8.1,84.7,7.9,83.6,Individual,Programming,100.0
+S119,13.1,73.4,7.3,88.9,Video lessons,Statistics,99.5
+S120,7.2,80.5,5.0,60.6,Individual,Statistics,95.3
+S121,4.7,80.5,7.6,89.8,Study group,Programming,92.1
+S122,8.6,85.8,6.4,65.5,Study group,Networks,90.1
+S123,8.7,92.0,8.4,87.8,Study group,Databases,100.0
+S124,12.3,71.4,6.3,63.8,Individual,Databases,94.3
+S125,10.7,80.7,6.3,66.7,Study group,Programming,95.0
+S126,9.1,96.8,7.6,69.8,Individual,Networks,95.0
+S127,12.7,74.6,7.8,98.0,Study group,Programming,95.8
+S128,4.2,73.8,7.5,76.1,Individual,Statistics,70.9
+S129,6.0,84.0,5.1,55.8,Study group,Statistics,86.4
+S130,5.0,90.4,7.6,77.6,Study group,Networks,88.1
+S131,6.8,82.1,5.9,60.3,Individual,Statistics,79.7
+S132,3.6,95.3,7.3,58.6,Individual,Programming,83.4
+S133,10.0,90.6,5.4,76.8,Individual,Statistics,100.0
+S134,7.3,90.4,7.5,65.4,Individual,Statistics,92.8
+S135,3.3,87.5,6.1,68.6,Individual,Programming,76.4
+S136,4.8,100.0,5.6,65.2,Video lessons,Programming,96.7
+S137,9.0,79.9,7.8,69.4,Individual,Programming,100.0
+S138,10.7,62.0,7.3,70.5,Video lessons,Statistics,94.8
+S139,14.4,98.0,6.3,39.8,,Statistics,100.0
+S140,17.3,77.4,8.6,73.7,Individual,Statistics,100.0
+S141,9.3,83.1,6.5,52.2,Study group,Databases,97.3
+S142,4.8,95.1,7.0,46.3,Video lessons,Programming,86.8
+S143,1.2,66.0,7.3,64.2,Study group,Networks,76.1
+S144,8.9,69.5,6.3,66.1,Individual,Networks,91.2
+S145,5.4,66.0,7.5,56.0,,Programming,68.9
+S146,6.7,74.1,6.4,75.8,Individual,Statistics,92.5
+S147,6.0,86.4,6.5,47.6,Study group,Programming,70.5
+S148,7.5,87.2,8.5,59.7,Video lessons,Statistics,84.1
+S149,11.4,84.8,5.9,57.4,Video lessons,Statistics,100.0
+S150,8.5,67.9,4.3,64.4,Individual,Programming,89.5
+S151,7.5,58.9,8.8,68.6,Study group,Programming,96.8
+S152,4.7,82.5,9.8,51.9,Individual,Statistics,80.8
+S153,2.6,77.3,6.6,74.4,Video lessons,Databases,70.3
+S154,6.4,86.6,4.9,65.8,Individual,Statistics,83.4
+S155,7.8,89.0,6.7,40.4,Video lessons,Networks,84.8
+S156,13.7,83.4,6.7,39.5,Video lessons,Statistics,94.5
+S157,8.4,89.6,6.8,64.8,Individual,Networks,100.0
+S158,11.1,84.3,5.8,62.1,Individual,Programming,91.2
+S159,,87.3,7.6,63.7,Video lessons,Databases,91.1
+S160,4.2,75.0,7.6,64.6,Individual,Networks,72.6
+S161,4.9,80.2,5.4,67.9,Study group,Programming,85.2
+S162,5.7,84.0,7.8,77.3,Video lessons,Networks,90.0
+S163,14.8,90.2,9.3,50.6,Study group,Statistics,98.5
+S164,5.4,78.1,7.2,49.8,Individual,Statistics,77.3
+S165,10.7,87.2,6.6,50.8,Individual,Databases,90.6
+S166,5.1,79.3,6.8,68.8,Individual,Databases,81.6
+S167,11.0,80.8,7.7,81.2,Video lessons,Programming,100.0
+S168,9.2,90.3,5.1,,Individual,Networks,89.7
+S169,7.5,62.1,7.2,32.5,Individual,Databases,71.8
+S170,7.9,69.0,6.6,42.8,Individual,Networks,62.0
+S171,5.9,67.2,9.0,54.2,Video lessons,Statistics,73.2
+S172,9.4,58.7,6.8,57.7,Individual,Databases,81.0
+S173,6.5,75.2,8.8,59.7,Video lessons,Statistics,79.8
+S174,4.1,89.5,5.8,65.5,Study group,Networks,93.7
+S175,3.9,79.2,7.6,60.9,Video lessons,Networks,78.8
+S176,8.6,84.0,7.4,78.6,Video lessons,Networks,100.0
+S177,,92.9,6.0,56.2,Video lessons,Databases,99.8
+S178,8.5,95.3,7.2,53.8,Video lessons,Networks,92.0
+S179,7.6,81.3,8.3,71.2,Individual,Statistics,91.2
+S180,8.9,95.5,6.6,45.0,Video lessons,Statistics,89.3
+S181,12.2,82.9,5.1,70.1,Study group,Networks,100.0
+S182,8.7,73.6,7.0,66.3,Study group,Programming,70.2
+S183,6.7,76.1,6.0,63.1,Video lessons,Databases,67.4
+S184,11.5,,6.6,85.6,Video lessons,Programming,93.0
+S185,9.4,73.1,6.9,56.9,,Databases,87.4
+S186,12.9,78.4,5.1,91.8,Study group,Statistics,100.0
+S187,8.6,90.0,5.2,62.1,Study group,Statistics,93.9
+S188,4.1,99.2,7.5,48.4,Individual,Statistics,79.8
+S189,3.6,68.2,6.4,65.9,Individual,Statistics,84.3
+S190,13.3,85.9,4.2,51.0,Individual,Statistics,100.0
+S191,13.5,71.6,7.9,55.2,Individual,Statistics,97.3
+S192,7.4,86.7,7.3,70.2,Individual,Databases,99.3
+S193,6.8,80.7,6.2,72.2,Video lessons,Networks,90.0
+S194,12.7,63.7,5.6,56.9,Individual,Databases,85.0
+S195,4.5,91.3,7.9,77.8,Video lessons,Databases,95.6
+S196,5.1,75.9,7.4,80.0,Study group,Networks,87.5
+S197,10.1,76.7,9.6,83.7,Individual,Networks,100.0
+S198,6.7,71.3,7.5,71.9,Individual,Programming,98.1
+S199,8.0,75.5,7.4,82.7,Individual,Databases,
+S200,7.5,86.3,6.8,40.5,Video lessons,Programming,71.4
+S201,9.1,80.1,7.9,60.9,Individual,Programming,81.7
+S202,12.5,85.3,7.7,53.7,Study group,Networks,
+S203,8.3,85.6,8.4,66.5,Video lessons,Programming,91.4
+S204,10.1,95.2,6.4,57.6,Video lessons,Networks,82.8
+S205,1.4,78.6,6.5,62.8,Individual,Networks,66.2
+S206,7.8,67.2,6.5,89.5,Individual,Networks,84.1
+S207,5.3,92.7,7.9,62.8,Individual,Databases,100.0
+S208,4.1,78.7,8.6,70.4,Individual,Networks,98.7
+S209,5.2,93.1,6.5,62.0,Individual,Programming,82.5
+S210,6.9,85.8,6.5,66.0,Study group,Networks,85.2
+S211,10.9,80.7,7.3,65.1,Video lessons,Programming,86.2
+S212,3.8,85.5,6.7,70.8,Study group,Statistics,68.2
+S213,8.1,100.0,8.0,80.1,Study group,Programming,99.7
+S214,6.5,100.0,4.5,86.4,Individual,Statistics,86.8
+S215,7.0,82.7,6.1,69.0,Video lessons,Databases,87.1
+S216,11.2,83.6,6.1,72.7,Study group,Statistics,84.7
+S217,9.7,,4.4,50.0,Video lessons,Networks,82.6
+S218,12.3,73.5,5.9,63.9,Video lessons,Databases,95.1
+S219,7.5,85.3,6.0,77.2,Individual,Databases,94.6
+S220,5.8,81.7,6.8,76.3,Individual,Networks,91.3
+S221,7.3,85.1,8.2,67.8,Individual,Statistics,80.8
+S222,8.8,73.7,6.7,76.5,Individual,Statistics,98.3
+S223,8.6,66.1,5.9,71.4,Video lessons,Networks,80.0
+S224,4.5,61.3,6.9,80.6,Individual,Databases,85.6
+S225,8.3,70.8,8.2,68.8,Video lessons,Databases,89.3
+S226,8.7,77.4,5.9,60.4,Study group,Statistics,75.9
+S227,16.1,79.1,6.0,69.4,Individual,Programming,100.0
+S228,14.0,100.0,7.6,26.9,Individual,Programming,100.0
+S229,5.3,93.1,,70.0,Study group,Programming,93.5
+S230,7.1,72.4,7.7,20.0,Study group,Programming,72.0
+S231,3.3,85.5,7.0,42.6,Individual,Databases,87.2
+S232,6.1,77.9,7.8,70.9,Individual,Programming,95.2
+S233,9.0,79.2,5.9,71.2,Study group,Databases,89.0
+S234,11.9,83.9,7.0,49.9,Individual,Networks,99.7
+S235,5.7,88.2,6.8,,Video lessons,Networks,99.4
+S236,5.9,78.6,5.7,82.8,Individual,Statistics,100.0
+S237,1.1,92.6,5.3,58.7,Individual,Programming,65.2
+S238,7.5,70.6,7.8,94.2,Study group,Networks,86.9
+S239,4.6,82.1,6.6,65.0,Study group,Programming,94.2
+S240,6.3,100.0,5.9,70.3,Study group,Databases,83.2
