@@ -225,12 +225,47 @@ print(f"Tamanho do efeito (d de Cohen): {cohen_d:.2f}")
 # Crie uma tabela cruzada entre método de estudo e aprovação (nota ≥ 70). 
 # Use o teste qui-quadrado de independência e verifique suas condições de aplicação.
 
-df['aprovacao'] = df['Final_Score'].apply(lambda x: 'Aprovado' if x >= 70 else 'Reprovado')
+df['Aprovacao'] = np.where(df['Final_Score'] >= 70, 'Aprovado', 'Reprovado')
 
-tabela_cruzada = pd.crosstab(df['Study_Method'], df['aprovacao'])
-print(tabela_cruzada)
+tabela_cruzada = pd.crosstab(df['Study_Method'], df['Aprovacao'])
+tabela_cruzada
 
-pd.crosstab(df['Study_Method'], df['aprovacao'], margins=True)
+pd.crosstab(df['Study_Method'], df['Aprovacao'], margins=True)
+
+# H0: O metodo de estudo e a aprovação é independente?  
+# H1: Método de estudo e aprovação não são independentes
+
+chi2, p_valor, gl, esperado = stats.chi2_contingency(tabela_cruzada)
+
+df_esperado = pd.DataFrame(esperado, index=tabela_cruzada.index, columns=tabela_cruzada.columns)
+
+df_esperado
+
+# Total de células da tabela esperada
+total_celulas = df_esperado.size
+
+# Quantas células têm frequência esperada menor que 5
+celulas_menores_5 = (df_esperado < 5).sum().sum()
+
+# Proporção de células com frequência esperada menor que 5
+proporcao = celulas_menores_5 / total_celulas
+
+# Menor frequência esperada
+menor_esperado = df_esperado.min().min()
+
+print("Total de células:", total_celulas)
+print("Células com esperado < 5:", celulas_menores_5)
+print(f"Proporção abaixo de 5: {proporcao:.1%}")
+print(f"Menor frequência esperada: {menor_esperado:.2f}")
+
+# Se a condição falhar e for uma tabela 2x2 (ou ate mesmo 3x3), roda o Teste Exato de Fisher:
+if proporcao < 0.8:
+    oddsratio, p_fisher = stats.fisher_exact(tabela_cruzada)
+    print(f"[FISHER] p-valor do Teste Exato de Fisher: {p_fisher:.4f}")
+
+# H0: O metodo de estudo e a aprovação é independente?  
+# ------- Com P-valor de 0.6320 é superior a 0.05, não rejeitamos a H0. Não há evidencias que o metodo de estudo seja independente
+#-------- Todos metodo de estudo obteve notas semelhantes. 
 
 # AINDA FALTA TERMINAR 
 # %%
