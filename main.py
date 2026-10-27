@@ -264,8 +264,33 @@ if proporcao < 0.8:
     print(f"[FISHER] p-valor do Teste Exato de Fisher: {p_fisher:.4f}")
 
 # H0: O metodo de estudo e a aprovação é independente?  
-# ------- Com P-valor de 0.6320 é superior a 0.05, não rejeitamos a H0. Não há evidencias que o metodo de estudo seja independente
+# ------- Com P-valor de 0.6650 é superior a 0.05, não rejeitamos a H0. não encontramos evidências estatísticas suficientes
+#         Para afirmar que existe associação entre o método de estudo e a aprovação.
+
 #-------- Todos metodo de estudo obteve notas semelhantes. 
 
 # AINDA FALTA TERMINAR 
+# %%
+
+# 17. Correlação
+# Calcule as correlações entre nota final e horas de estudo, frequência, sono e nota anterior. 
+# Qual variável apresenta a maior correlação linear com a nota final?
+
+col_alvo = 'Final_Score'
+col_explicativas = ['Study_Hours_Week', 'Attendance_Pct', 'Sleep_Hours_Day', 'Previous_Score']
+
+df_limpo = df[['Final_Score'] + col_explicativas].dropna()
+
+resul = {}
+
+for col in col_explicativas:
+    corr, p_valor = stats.pearsonr(df_limpo[col_alvo], df_limpo[col])
+
+    resul[col] = {"corr": corr, 'p_valor' : p_valor}
+
+pd.DataFrame(resul)
+
+
+
+
 # %%
