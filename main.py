@@ -3,6 +3,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import scipy.stats as stats
 import numpy as np
+import seaborn as sns 
 
 # %%
 df = pd.read_csv('dataset_desempenho_estudantes.csv')
@@ -288,9 +289,142 @@ for col in col_explicativas:
 
     resul[col] = {"corr": corr, 'p_valor' : p_valor}
 
-pd.DataFrame(resul)
+df_resul = pd.DataFrame(resul).T
+
+df_resul
+
+# Temos que Study_Hours_Week é correlação mais forte entre todas. Com 0.5349, ou seja, quanto mais estuda pode ter impacto nas notas
+
+# %%
+# [ ] 18. Visualização de relações
+# Crie gráficos de dispersão entre nota final e horas de estudo. 
+# Adicione uma linha de tendência e procure padrões ou pontos influentes.
+sns.set_theme(style='whitegrid')
+
+plt.figure(figsize=(10,8))
+
+sns.regplot(
+    data=df,
+    x='Study_Hours_Week',
+    y='Final_Score',
+    scatter_kws={'alpha':0.5,'color': 'royalblue'},
+    line_kws={'color': 'crimson', 'linewidth': 2}
+)
+
+plt.title("Dispresão Horas de estudos vs Notas Final")
+plt.xlabel("Horas de estudos por semana")
+plt.ylabel("Notas Final")
+
+plt.tight_layout()
+plt.show()
+
+dados = df[['Study_Hours_Week', 'Final_Score']].dropna()
+res = stats.linregress(dados['Study_Hours_Week'], dados['Final_Score'])
+print(f"Intercepto (B): {res.intercept:.2f} | Inclinação (Alfa): {res.slope:.2f} | R²: {res.rvalue**2:.4f}")
+print(f"Y = {res.slope:.2f}X + {res.intercept:.2f} | X = Horas estudadas ")
 
 
 
 
 # %%
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+cols = ['Final_Score', 'Study_Hours_Week', 'Attendance_Pct', 'Sleep_Hours_Day', 'Previous_Score']
+sns.pairplot(df[cols].dropna(), kind='reg', plot_kws={'line_kws': {'color': 'crimson', 'linewidth': 1.5}, 'scatter_kws': {'alpha': 0.4}})
+plt.suptitle('Relações Cruzadas entre Todas as Variáveis', y=1.02)
+plt.show()
+
+# %%
+
+# [ ] 21. Pergunta de pesquisa
+# Investigue: estudantes com frequência ≥ 80% têm notas finais maiores, em média, do que os demais?
+
+# Aplicar Teste de Hipotese
+# H0: a média das notas do grupo com frequência alta é MENOR ou igual à média do grupo com frequência baixa.
+# H1: a média das notas do grupo com frequência alta é MAIOR que a média do grupo com frequência baixa.
+
+# %%
+grupo_frequencia_alta = df.loc[
+    df['Attendance_Pct'] >= 80, 'Final_Score'
+].dropna()
+
+grupo_frequencia_baixa = df.loc[
+    df['Attendance_Pct'] < 80, 'Final_Score'
+].dropna()
+
+#  Estatísticas descritivas
+print("Frequência >= 80%")
+print("Quantidade:", len(grupo_frequencia_alta))
+print("Média:", grupo_frequencia_alta.mean())
+print("Desvio-padrão:", grupo_frequencia_alta.std())
+
+print("\nFrequência < 80%")
+print("Quantidade:", len(grupo_frequencia_baixa))
+print("Média:", grupo_frequencia_baixa.mean())
+print("Desvio-padrão:", grupo_frequencia_baixa.std())
+
+
+result_notas = stats.ttest_ind(grupo_frequencia_alta, grupo_frequencia_baixa, equal_var=False, alternative='greater')
+
+print("\nEstatística t:", result_notas.statistic)
+print("P-valor:", result_notas.pvalue)
+
+
+# Foi realizado um teste t de Welch unilateral para comparar as notas finais dos estudantes com frequência ≥ 80%
+# e daqueles com frequência abaixo de 80%.
+# O resultado foi estatisticamente significativo t=3,63, p=0,000186. 
+# Ao nível de significância de 5%, rejeitamos a hipótese nula e 
+# encontramos evidências de que estudantes com frequência ≥ 80% apresentam notas
+# médias superiores. Contudo, esse resultado demonstra uma associação, 
+# não necessariamente uma relação causal.
+
+# %%
+# [ ] 22 - PERGUNTA PESQUISA: 
+
+# Estudantes que dormem 7 horas ou mais por dia apresentam notas finais 
+# médias maiores do que estudantes que dormem menos de 7 horas?
+
+# População: Todos os estudantes
+# Variavel Resposta: Final Score
+# Grupos comparação: Alunos dormem >= 7 horas por dia vs Alunos dormem <= 7 horas
+# H0: Estudantes que dormem 7 hrs ++ não tem notas melhores
+# H1 Estudantes dormem 7 hrs ++ tem notas melhores
+
+# GRUPOS
+grupo_dorme_pouco = df.loc[df['Sleep_Hours_Day'] < 7, 'Final_Score'].dropna()
+
+grupo_dorme_muito = df.loc[df['Sleep_Hours_Day'] >= 7, 'Final_Score'].dropna()
+
+print("\n #### GRUPO DORME POUCO #####")
+print("Quantidade", len(grupo_dorme_pouco))
+print("Media: ", grupo_dorme_pouco.mean())
+print("Desvio Padrao", grupo_dorme_pouco.std())
+
+print("\n #### GRUPO DORME MUITO #####")
+print("Quantidade", len(grupo_dorme_muito))
+print("Media: ", grupo_dorme_muito.mean())
+print("Desvio Padrao", grupo_dorme_muito.std())
+
+# %%
+
+resul_sono = stats.ttest_ind(grupo_dorme_muito, grupo_dorme_pouco,
+                equal_var=False, 
+                alternative='greater')
+
+print("\nt: ", resul_sono.statistic)
+print("P-valor: ", resul_sono.pvalue)
+# %%
+# Foi realizado teste T de welch unilateral para comparar as notas em dois grupos:
+# GRUPO 1: Horas de sono maior igual a 7,
+# GRUPO 2: Horas de sono menor a 7.
+# O resultado foi estatisticamente significativo, com t = 1,47 desvio padrão
+# Ou seja, indica uma associação onde grupos que dormem mais possue melhores notas
+# Além disso, O teste realizado possui valor de significancia de 0.05
+# Diante disso, seu pvalor foi: 0.07. Logo, não podemos rejeitar a hipotese nula
+# (Estudantes com mais horas de sono tiram menores notas). 
+# Portanto, nao foram encontradas evidencias estatisticas para concluir que estudantes
+# Que dormem mais de 7 horas tiram notas melhores. Isso nao comprova que a media sejam iguais,
+# nem permite concluir que a duração de sono impacta nas notas
+
