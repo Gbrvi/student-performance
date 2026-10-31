@@ -428,3 +428,53 @@ print("P-valor: ", resul_sono.pvalue)
 # Que dormem mais de 7 horas tiram notas melhores. Isso nao comprova que a media sejam iguais,
 # nem permite concluir que a duração de sono impacta nas notas
 
+
+## -=-=-=-==-=-=-=-=-=-==-=-=-=-==-==-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# %%
+# INTERVALO DE CONFIANÇA
+
+resultado = stats.ttest_ind(
+    grupo_dorme_muito,
+    grupo_dorme_pouco,
+    equal_var=False
+)
+
+ic = resultado.confidence_interval(confidence_level=0.95)
+
+limt_inf, limt_sup = ic
+
+(limt_inf.item(), limt_sup.item())
+
+# Estamos analisando media populacional de dois grupos:
+# 1º Intervalo positivo (a,b) = Temos primeiro grupo com media superior
+# 2º Intervalo negativo (-a,-b) = Temos segundo grupo com media superior
+# 3º Intervalo contem zero (-a, b) = Nao podemos afirmar que existe uma diferença entre a media populacional]
+
+# Nosso intervalo é (-0.608, 4,271) então não conseguimos descartar hip que as medias sejam iguais
+# Isso significa que nao encontramos evidencia estatistica para afirmar que sao diferentes.
+# Tudo isso se enquadra em EXISTE EVIDENCIA ESTATISTICA?
+
+# ----------------=-=-=-=-=-----------=-=-=-=-=--=-
+# %%
+
+media_muito = grupo_dorme_muito.mean()
+media_pouco = grupo_dorme_pouco.mean()
+
+n1 = len(grupo_dorme_muito)
+n2 = len(grupo_dorme_pouco)
+
+dp1 = grupo_dorme_muito.std(ddof=1)
+dp2 = grupo_dorme_pouco.std(ddof=1)
+
+dp_combinado = np.sqrt(
+    (n1 - 1) * dp1**2 + (n2 - 1) * dp2**2 / (n1 + n2 - 2)
+    )
+
+cohens_d = (media_muito - media_pouco) / dp_combinado
+
+print("Média dorme muito:", media_muito)
+print("Média dorme pouco:", media_pouco)
+print("Desvio padrão combinado:", dp_combinado)
+print("Cohen's d:", cohens_d)
+
+
