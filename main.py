@@ -467,7 +467,7 @@ dp1 = grupo_dorme_muito.std(ddof=1)
 dp2 = grupo_dorme_pouco.std(ddof=1)
 
 dp_combinado = np.sqrt(
-    (n1 - 1) * dp1**2 + (n2 - 1) * dp2**2 / (n1 + n2 - 2)
+    ((n1 - 1) * dp1**2 + (n2 - 1) * dp2**2) / (n1 + n2 - 2)
     )
 
 cohens_d = (media_muito - media_pouco) / dp_combinado
@@ -477,4 +477,110 @@ print("Média dorme pouco:", media_pouco)
 print("Desvio padrão combinado:", dp_combinado)
 print("Cohen's d:", cohens_d)
 
+## O Cohen's D foi 0.019157339455124697. Ou seja, tamanho do efeito é pequeno. 
 
+#Nosso teste T mostrou nao ter uma diferença estatiscamente significativa, e o cohen's ajuda ainda mais a provar. A diferença foi de apenas 0.01 desvio padrão, ou seja, é uma diferença bem fraca na pratica.
+
+
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-= PODER ESTATISTICO -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#                             ERRO TIPO 1 E TIPO 2
+# A ideia será criar dois grupos com uma diferença real conhecida e variar o tamanho das amostras. 
+# %%
+
+def calcular_cohens_d(grupo_A, grupo_B):
+    media_muito = grupo_A.mean()
+    media_pouco = grupo_B.mean()
+
+    n1 = len(grupo_A)
+    n2 = len(grupo_B)
+
+    dp1 = grupo_A.std(ddof=1)
+    dp2 = grupo_B.std(ddof=1)
+
+    dp_combinado = np.sqrt(
+        ((n1 - 1) * dp1**2 + (n2 - 1) * dp2**2) / (n1 + n2 - 2)
+        )
+
+    cohens_d = (media_muito - media_pouco) / dp_combinado
+
+    return cohens_d
+
+np.random.seed(42)
+
+grupo_controle = np.random.normal(
+    loc=80,
+    scale=10,
+    size=30
+) # CRIA UMA POPULAÇÃO COM ESSE PADRAO
+
+grupo_experimental = np.random.normal(
+    loc=84,
+    scale=10,
+    size=30
+)
+
+print("Média controle:", grupo_controle.mean())
+print("Média experimental:", grupo_experimental.mean())
+
+grupo_controle
+
+# TESTE T ENTRE OS GRUPOS
+
+resul_experimento = stats.ttest_ind(
+    grupo_experimental,
+    grupo_controle,
+    equal_var=False)
+
+print("\nEstatistica: Valor de T", resul_experimento.statistic)
+print("P-valor", resul_experimento.pvalue)
+
+d_value = calcular_cohens_d(grupo_experimental, grupo_controle)
+print("Cohens D: ", d_value)
+# %%
+
+# Estimar o poder estatístico - Gerando 1000 simulações e testando diferente tamanho de amostra
+
+def simular_poder_estatistico(n, media_controle, media_experimental, simulacoes=1000):
+    rejeicoes = 0
+
+    for _ in range(simulacoes):
+
+        grupo_controle = np.random.normal(
+            loc=media_controle,
+            scale=10,
+            size=n
+        )
+
+        grupo_experimental = np.random.normal(
+            loc=media_experimental,
+            scale=10,
+            size=n
+        )
+
+        resultado = stats.ttest_ind(
+            grupo_experimental,
+            grupo_controle,
+            equal_var=False
+        )
+
+        if(resultado.pvalue < 0.05):
+            rejeicoes += 1
+
+    poder = rejeicoes / simulacoes
+
+    return poder
+
+tamanho_amostra = [10, 20, 30, 50, 100, 200, 500]
+
+for n in tamanho_amostra:
+    poder = simular_poder_estatistico(n, 80, 84)
+
+    print(
+        f"Amostra: {n} por grupo | "
+        f"Poder estatístico: {poder:.3f}"
+    )
+
+print("Diferença de 4:", simular_poder_estatistico(100, 80, 84))
+print("Diferença de 2:", simular_poder_estatistico(100, 80, 82))
+print("Diferença de 1:", simular_poder_estatistico(100, 80, 81))
+# %%
