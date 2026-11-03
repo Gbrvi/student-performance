@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 import scipy.stats as stats
 import numpy as np
 import seaborn as sns 
+from statsmodels.stats.power import TTestIndPower
 
 # %%
 df = pd.read_csv('dataset_desempenho_estudantes.csv')
@@ -583,4 +584,56 @@ for n in tamanho_amostra:
 print("Diferença de 4:", simular_poder_estatistico(100, 80, 84))
 print("Diferença de 2:", simular_poder_estatistico(100, 80, 82))
 print("Diferença de 1:", simular_poder_estatistico(100, 80, 81))
+# %%
+# -=-=-=-=-=-=--=-= ERRO TIPO I -=-=-=--=-=-=-=
+
+def simulacao_erro_I(n, alfa=0.05, simulacao=1000):
+    rejeicao = 0
+
+    for _ in range(simulacao):
+
+        grupo_controle = np.random.normal(
+            loc = 80,
+            scale= 10,
+            size=n
+        )
+
+        grupo_experimental = np.random.normal(
+            loc = 84,
+            scale = 10,
+            size = n
+        )
+
+        resultado = stats.ttest_ind(grupo_experimental, grupo_controle, equal_var=False)
+
+        if resultado.pvalue < alfa:
+            rejeicao += 1
+
+        poder = rejeicao / simulacao
+    return poder
+
+print("Poder Estatisico:", simulacao_erro_I(1000, 0.01))
+print("Poder Estatisico:", simulacao_erro_I(1000, 0.01))
+print("Poder Estatisico:", simulacao_erro_I(1000, 0.01))
+print("Poder Estatisico:", simulacao_erro_I(1000, 0.01))
+print("Poder Estatisico:", simulacao_erro_I(1000, 0.01))
+
+#### -=-=-=-=-=-=-=-=-=-PODER ESTATISTICO -=-=-=-=-=-=-=-=-=
+# Como saber o tamanho ideal da amostra? 
+# %%
+
+analise = TTestIndPower()
+
+resposta = analise.solve_power(
+    effect_size=0.2,
+    alpha=0.01,
+    power=0.80,
+    ratio=1.0,
+    alternative='two-sided'
+)
+
+print(f"é necessario {resposta} por grupo")
+
+
+
 # %%
